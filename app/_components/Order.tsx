@@ -29,6 +29,7 @@ interface Props {
   children?: ReactNode;
   item?: FormType;
   title?: string;
+  onClose?: () => void;
 }
 
 interface CreateListProps {
@@ -93,7 +94,7 @@ const inputFields: InputField[] = [
   },
 ];
 
-const Order: FC<Props> = ({ children, item, title }) => {
+const Order: FC<Props> = ({ children, item, title, onClose }) => {
   const { formData, onChange, resetForm } = useForm<FormType>(
     item || initialState
   );
@@ -114,6 +115,7 @@ const Order: FC<Props> = ({ children, item, title }) => {
       toast.success("Successfully created order!");
       resetForm();
     }
+    onClose?.();
   };
 
   return (

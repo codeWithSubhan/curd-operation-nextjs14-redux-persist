@@ -78,7 +78,7 @@ export default function workOrder(): ReactElement {
       </div>
 
       <Modal isOpen={isOpen}>
-        <Order title="Create Order">
+        <Order title="Create Order" onClose={handleToggleModal}>
           <Button>Submit</Button>
           <Button onclick={handleToggleModal}>Close</Button>
         </Order>
@@ -120,7 +120,7 @@ function OrderList({ item }: { item: OrderType }): ReactElement {
       </tr>
 
       <Modal isOpen={isOpen}>
-        <Order title="Update Order" item={item}>
+        <Order title="Update Order" item={item} onClose={handleToggleModal}>
           <Button>Submit</Button>
           <Button onclick={handleToggleModal}>Close</Button>
         </Order>

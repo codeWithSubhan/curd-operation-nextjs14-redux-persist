@@ -40,15 +40,15 @@ export default function RootLayout({
           </main>
         </div>
         <ToastContainer
-          position="top-center"
-          autoClose={5000}
+          position="top-right"
+          autoClose={3000}
           hideProgressBar={false}
           newestOnTop={false}
-          closeOnClick
+          closeOnClick={false}
           rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
+          pauseOnFocusLoss={false}
+          draggable={false}
+          pauseOnHover={false}
           theme="light"
           transition={Slide}
         />
